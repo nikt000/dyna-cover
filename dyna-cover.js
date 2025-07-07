@@ -68,19 +68,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("img[alt]").forEach((img) => {
-      if (img.closest("figure")) return;
-      const fig = document.createElement("figure");
-      const clone = img.cloneNode(true);
-      const caption = document.createElement("figcaption");
-      caption.innerText = img.alt;
-      fig.appendChild(clone);
-      fig.appendChild(caption);
-      img.replaceWith(fig);
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
     const hidden = document.createElement("div");
     hidden.style.cssText = "font-size:0.1px;height:0.1px;overflow:hidden;position:absolute;left:-9999px;";
     hidden.innerText =
